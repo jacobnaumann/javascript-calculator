@@ -1,13 +1,96 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  font-family:'Courier New', Courier, monospace;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.calculator {
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  background-color: #f5f5f5;
 }
+
+.formulaScreen {
+  background-color: black;
+  color: rgb(148, 148, 55);
+  font-size: 1em; /* You can adjust this value for the desired font size */
+  padding: 2px 4px;
+  border: none;
+  text-align: right;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+#display {
+  background-color: black;
+  color: white;
+  font-size: 2em; /* You can adjust this value for the desired font size */
+  padding: 5px;
+  border: none;
+  text-align: right;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+  "clear clear divide multiply"
+  "seven eight nine subtract"
+  "four five six add"
+  "one two three equals"
+  "zero zero decimal equals";
+  gap: 10px;
+  margin-top: 20px;
+}
+
+#clear { grid-area: clear; }
+#divide { grid-area: divide; }
+#multiply { grid-area: multiply; }
+#seven { grid-area: seven; }
+#eight { grid-area: eight; }
+#nine { grid-area: nine; }
+#subtract { grid-area: subtract; }
+#four { grid-area: four; }
+#five { grid-area: five; }
+#six { grid-area: six; }
+#add { grid-area: add; }
+#one { grid-area: one; }
+#two { grid-area: two; }
+#three { grid-area: three; }
+#equals { grid-area: equals; }
+#zero { grid-area: zero; }
+#decimal { grid-area: decimal; }
+
+button {
+  padding: 15px;
+  font-size: 1.5em;
+  border: none;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #d5d5d5;
+}
+
+#clear {
+  grid-column: span 2;
+  background-color: #f44336;
+  color: #fff;
+}
+
+#equals {
+  background-color: #2196F3;
+  color: #fff;
+}
+
+#add, #subtract, #multiply, #divide {
+  background-color: #9E9E9E;
+  color: #fff;
+}
+
